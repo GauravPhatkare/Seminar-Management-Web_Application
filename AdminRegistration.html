@@ -14,8 +14,7 @@
     <div class="container">
         <div class="title">Admin Registration</div>
         <div class="content">
-<!--             admin registration -->
-            <form action="AdminRegServlet" method = "post">
+            <form action="" method = "">
                 <div class="user-details">
                     <div class="input-box">
                         <span class="details">Admin Full Name</span>
@@ -23,16 +22,23 @@
                     </div>
                     <div class="input-box">
                         <span class="details">Contact Number</span>
-                        <input type="text" placeholder="Enter your phone number" name = "Contact" required>
+                        <input type="text" placeholder="Enter your number" name="Contact_no" required pattern="\d{10}" title="Please enter a 10-digit phone number" maxlength="10" oninput="this.value = this.value.replace(/[^0-9]/g, '');">
                     </div>
                     <div class="input-box">
                         <span class="details">Email</span>
-                        <input type="email" placeholder="Enter your email" name = "Email" required>
+                        <!-- <input type="email" placeholder="Enter your email" name = "Email" required> -->
+                        <input type="email" placeholder="Enter your email" name="Email" required pattern="^[A-Za-z0-9._%+-]+@(gmail\.com|email\.com)$" title="Please enter a valid email address ending with @gmail.com or @email.com">
                     </div>
                     <div class="input-box">
                         <span class="details">Password</span>
-                        <input type="password" placeholder="Create password" name = "Password" required>
+                        <input type="password" placeholder="Create password" name="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{7,}$" 
+                            title="Password must contain at least one digit, one uppercase letter, one lowercase letter, and be at least 7 characters long">
                     </div>
+                    <!-- <div class="input-box"> -->
+                        <!-- <span class="details">Password</span> -->
+                        <!-- <input type="password" placeholder="Create password" name = "Password" required> -->
+                        <!-- <input type="password" placeholder="Create password" name="password" required pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)[A-Za-z\d]{7,}$" title="Password must contain at least one character, one digit, one uppercase letter, one lowercase letter, and be at least 7 characters long"> -->
+                    <!-- </div> -->
                     <div class="input-box">
                         <span class="details">City</span>
                         <input type="text" placeholder="Enter your City" name = "City" required>
@@ -47,7 +53,8 @@
                     </div>
                 </div>
                 <div class="button">
-                    <input type="submit" value="Register">
+                    <a href = "AdminLogin.html">
+                    <input type="" value="Register""></a>
                 </div>
                 <div class="login">Already have account? <a href="AdminLogin.html">Login</a></div>
             </form>
@@ -58,4 +65,4 @@
     <script src="js/script.js"></script>
 </body>
 
-</html>   
+</html>
